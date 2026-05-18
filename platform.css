@@ -13,6 +13,22 @@
     box-sizing: border-box;
 }
 
+.player{           
+    width: 65px;            
+    position: relative;      
+    top: 122px;         
+    transform: translateX(-800px);   
+}
+
+.street{      
+    width: 10000px; 
+    height: 50px; 
+    position: relative;  
+    top: 100px;    
+}
+   
+
+
 
 header{
    font-size: 35px;
@@ -51,11 +67,6 @@ main{
     justify-content: center;
     align-items: center;
     
-.main-character{
-    width: 100px;
-    height: 100px;
-    
-}
 }
 
 
