@@ -13,26 +13,59 @@
     box-sizing: border-box;
 }
 
+section{
+    position: relative;
+    width: 1200px;
+    height: 450px;
+    overflow: hidden;
+}
+
 .player{           
     width: 65px;            
     position: relative;      
-    top: 226px;         
-    transform: translateX(-0.3px);   
+    top: 300px; 
+    
 }
 
 .street{      
-    width: 1680px; 
-    height: 50px; 
-    position: relative;  
-    top: 120px;    
+     width: 1000000%;
+    height: 50px;
+    position: relative;
+    top: 244px;
+   
+    background-image: url(concrete-board-in-cartoon-style-clip-art-free-png.png);
+    background-repeat: repeat-x;
+    background-size: auto 50px;
+
+    animation: moveStreet 500s linear forwards;
+}
+
+@keyframes moveStreet {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+         background-position: -73% 0;
+    }
 }
 
 .object--1{
     width: 80px;
-    position: relative;
-    left: 70px;
-    top: 70px;
+    position: absolute;
+    top: 250px;
 }
+
+.restart{
+     background: transparent;
+    border: none
+}
+
+.restart img{
+    width: 130%;
+    height: 130%;
+}
+   
 
    
 
