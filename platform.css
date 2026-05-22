@@ -24,6 +24,7 @@ section{
     width: 65px;            
     position: relative;
     top: 500px;
+    left: 130px;
   
     
 }
@@ -67,6 +68,12 @@ section{
     width: 200px;
     position: absolute;
     top: 169px;
+}
+
+.ex-girl{
+    width: 150px;
+    position: absolute;
+    top: 221px;
 }
 
 .restart{

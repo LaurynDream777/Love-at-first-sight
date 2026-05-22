@@ -6,6 +6,7 @@ const restartButton = document.querySelector('.restart');
 const home = document.querySelector ('.object--2')
 const dad = document.querySelector('.object--3')
 
+
 let playerY = 300;
 let heelX = 1100;
 let heelSpeed = 8;
@@ -26,6 +27,7 @@ dad.style.left = `${dadX}px`;
 
 
 
+
 requestAnimationFrame(gameLoop);
 }
 
@@ -38,6 +40,7 @@ function resetGame() {
     home.style.left = `${homeX}px`;
     dadX = 4900
     dad.style.left = `${dadX}px`;
+   
 }
 restartButton.addEventListener("click", resetGame);
 gameLoop();  
