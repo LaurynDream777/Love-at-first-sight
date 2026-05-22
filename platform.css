@@ -22,8 +22,9 @@ section{
 
 .player{           
     width: 65px;            
-    position: relative;      
-    top: 300px; 
+    position: relative;
+    top: 500px;
+  
     
 }
 
@@ -31,9 +32,9 @@ section{
      width: 1000000%;
     height: 50px;
     position: relative;
-    top: 244px;
+    top: 296px;
    
-    background-image: url(concrete-board-in-cartoon-style-clip-art-free-png.png);
+    background-image: url(concrete-board-in-cartoon-style-clip-art-free-png.webp);
     background-repeat: repeat-x;
     background-size: auto 50px;
 
