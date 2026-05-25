@@ -1,7 +1,7 @@
 console.log('Game started');
 
 
-// ================= SIMPLE CLASS (REQUIRED BY TEACHER) =================
+
 class Player {
     constructor(element) {
         this.element = element; //places html element in the object
