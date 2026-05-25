@@ -1,0 +1,165 @@
+:root{
+    --clr-dark: 
+    --clr-light-accent: 
+    --clr-light: 
+    --clr-light-plus:
+    --clr-mid: "#808080" 
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section{
+    position: relative;
+    width: 1200px;
+    height: 450px;
+    overflow: hidden;
+}
+
+.player{           
+    width: 65px;            
+    position: relative;
+    top: 500px;
+    left: 130px;
+  
+    
+}
+
+.street{      
+     width: 100%;
+    height: 50px;
+    position: relative;
+    top: 296px;
+   
+    background-image: url(concrete-board-in-cartoon-style-clip-art-free-png.webp);
+    background-repeat: repeat-x;
+    background-size: auto 50px;
+
+    animation: moveStreet 20s linear infinite;
+}
+
+@keyframes moveStreet {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+         background-position: -1000% 0;
+    }
+}
+
+.object--1{
+    width: 80px;
+    position: absolute;
+    top: 250px;
+}
+
+.object--2{
+    width: 175px;
+    position: absolute;
+    top: 212px;
+}
+
+.object--3{
+    width: 200px;
+    position: absolute;
+    top: 169px;
+}
+
+.ex-girl{
+    width: 150px;
+    position: absolute;
+    top: 221px;
+}
+
+.restart{
+    background: transparent;
+    border: none
+}
+
+.restart img{
+    width: 130%;
+    height: 130%;
+}
+
+.restart{
+    background: transparent;
+    border: none
+}
+
+.pause img{
+    width: 130%;
+    height: 130%;
+}
+   
+
+   
+
+
+
+header{
+   font-size: 35px;
+  font-family: "Intel One Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  background-color: white;
+  padding: 4rem;
+  display: flex;
+  justify-content: space-between;
+  
+
+  
+
+}
+
+h1{
+    color: transparent;
+    background-color: gray;
+     -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+
+    
+}
+
+
+
+
+main{
+    background-color: white;
+    padding: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.pause{
+    width: 50px;
+    height: 50px;
+}
+
+.restart{
+    width: 50px;
+    height: 50px;
+}
+
+
+
+
+
+footer{
+    background-color: white;
+    padding: 4rem;
+    position: fixed;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+}
+
