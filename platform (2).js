@@ -23,13 +23,12 @@ const street = document.querySelector('.street');
 let playerY = 300; //player vertical position
 
 let heelX = 1100; //starting X position
-let heelSpeed = 15; // speed of heel
-
+let heelSpeed = 10; // speed of heel
 let homeX = 3000; //home starting X position
 let dadX = 4900; //dad starting X position
 
 let velocityY = 0;
-let gravity = 0.8;
+let gravity = 0.9;
 let isJumping = false;
 let isPaused = false;
 
