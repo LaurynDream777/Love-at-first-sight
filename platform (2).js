@@ -17,6 +17,7 @@ const dad = document.querySelector('.object--3');
 const restartButton = document.querySelector('.restart');
 const pauseButton = document.querySelector('.pause');
 const street = document.querySelector('.street');
+const woman = document.querySelector('.ex-girl');
 
 
 // ================= VARIABLES =================
@@ -32,6 +33,11 @@ let gravity = 0.9;
 let isJumping = false;
 let isPaused = false;
 
+let womanX = 1200;   // start her far away
+let womanMoving = false;
+let womanSpeed = 50;
+
+let gameOver = false;
 
 // ================= GAME LOOP =================
 function gameLoop() {
@@ -46,26 +52,58 @@ function gameLoop() {
     }
 
     // ----- JUMP PHYSICS -----
-    velocityY += gravity; //increases gravity
-    playerY += velocityY; //updates the players vertical position
+
+    if (!gameOver) {
+    velocityY += gravity;
+    playerY += velocityY;
 
     if (playerY >= 300) {
-        playerY = 300; //keeps player on ground
+        playerY = 300;
         velocityY = 0;
         isJumping = false;
     }
+}
 
-    player.element.style.top = `${playerY}px`; //updates player position
+    player.element.style.top = `${playerY}px`;
 
     // ----- MOVING OBJECTS -----
-    heelX -= heelSpeed;
+    if (!gameOver) {
+        heelX -= heelSpeed;
+        homeX -= heelSpeed;
+        dadX -= heelSpeed;
+    }
+
     heel.style.left = `${heelX}px`;
-
-    homeX -= heelSpeed;
     home.style.left = `${homeX}px`;
-
-    dadX -= heelSpeed;
     dad.style.left = `${dadX}px`;
+
+    if (womanMoving) {
+    womanX -= womanSpeed;
+    woman.style.left = `${womanX}px`;
+    }
+    if (
+    !gameOver &&
+    (
+        bumpedInto(player.element, heel) ||
+        bumpedInto(player.element, dad) ||
+        bumpedInto(player.element, home)
+    ) &&
+    playerY >= 260 
+) {
+    gameOver = true;
+    heel.style.display = "none";
+    home.style.display = "none";
+    dad.style.display = "none";
+    womanMoving = true;
+    woman.style.display = "block";
+    womanX = 1200;
+    woman.style.left = `${womanX}px`;
+}
+    if (womanMoving && bumpedInto(player.element, woman)) {
+    console.log("Game Over");
+    isPaused = true;
+    }
+
 
     requestAnimationFrame(gameLoop);
 }
@@ -83,15 +121,28 @@ document.addEventListener("keyup", function () {
 });
 
 
+
 // ================= RESET BUTTON =================
 restartButton.addEventListener("click", function() {
-    heelX = 1100; // resets position
-    homeX = 3000;
-    dadX = 4900;
+        heelX = 1100;
+        homeX = 3000;
+        dadX = 4900;
 
-    heel.style.left = `${heelX}px`; //updates position
-    home.style.left = `${homeX}px`;
-    dad.style.left = `${dadX}px`;
+        womanX = 1200;
+        womanMoving = false;
+
+        gameOver = false;
+        isPaused = false;
+
+        woman.style.display = "none";
+        heel.style.display = "block";
+        home.style.display = "block";
+        dad.style.display = "block";
+
+
+        heel.style.left = `${heelX}px`;
+        home.style.left = `${homeX}px`;
+        dad.style.left = `${dadX}px`;
 });
 
 //================= PAUSE BUTTON ====================
@@ -105,6 +156,18 @@ pauseButton.addEventListener("click", function () {
     }
 });
 
+// ================= COLLUSION =============
+function bumpedInto(a, b){
+    const r1 = a.getBoundingClientRect();
+    const r2 = b.getBoundingClientRect();
+
+    return(
+        r1.left + 10 < r2.right &&
+        r1.right - 10 > r2.left &&
+        r1.bottom - 10 > r2.top &&
+        r1.top + 10 < r2.bottom
+    );
+}
 
 // ================= START GAME =================
 gameLoop();
