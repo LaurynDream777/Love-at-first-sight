@@ -18,6 +18,9 @@ const restartButton = document.querySelector('.restart');
 const pauseButton = document.querySelector('.pause');
 const street = document.querySelector('.street');
 const woman = document.querySelector('.ex-girl');
+const kiss = document.querySelector('.object--4');
+const heart = document.querySelector('.object--5');
+const gloss = document.querySelector('.object--6');
 
 
 // ================= VARIABLES =================
@@ -27,9 +30,12 @@ let heelX = 1100; //starting X position
 let heelSpeed = 10; // speed of heel
 let homeX = 3000; //home starting X position
 let dadX = 4900; //dad starting X position
+let kissX = 6800;
+let heartX = 8000
+let glossX = 9500
 
 let velocityY = 0;
-let gravity = 0.9;
+let gravity = 0.6;
 let isJumping = false;
 let isPaused = false;
 
@@ -71,11 +77,17 @@ function gameLoop() {
         heelX -= heelSpeed;
         homeX -= heelSpeed;
         dadX -= heelSpeed;
+        kissX -= heelSpeed;
+        heartX -= heelSpeed;
+        glossX -= heelSpeed;
     }
 
     heel.style.left = `${heelX}px`;
     home.style.left = `${homeX}px`;
     dad.style.left = `${dadX}px`;
+    kiss.style.left = `${kissX}px`;
+    heart.style.left = `${heartX}px`;
+    gloss.style.left = `${glossX}px`;
 
     if (womanMoving) {
     womanX -= womanSpeed;
@@ -86,14 +98,20 @@ function gameLoop() {
     (
         bumpedInto(player.element, heel) ||
         bumpedInto(player.element, dad) ||
-        bumpedInto(player.element, home)
+        bumpedInto(player.element, home) ||
+        bumpedInto(player.element, kiss) ||
+        bumpedInto(player.element, heart) ||
+        bumpedInto(player.element, gloss)
     ) &&
-    playerY >= 260 
+    playerY >= 200  
 ) {
     gameOver = true;
     heel.style.display = "none";
     home.style.display = "none";
     dad.style.display = "none";
+    kiss.style.display = "none";
+    heart.style.display = "none";
+    gloss.style.display = "none";
     womanMoving = true;
     woman.style.display = "block";
     womanX = 1200;
@@ -102,6 +120,7 @@ function gameLoop() {
     if (womanMoving && bumpedInto(player.element, woman)) {
     console.log("Game Over");
     isPaused = true;
+    womanMoving = false;
     }
 
 
@@ -138,11 +157,17 @@ restartButton.addEventListener("click", function() {
         heel.style.display = "block";
         home.style.display = "block";
         dad.style.display = "block";
+        kiss.style.display = "block";
+        heart.style.display = "block";
+        gloss.style.display = "block";
 
 
         heel.style.left = `${heelX}px`;
         home.style.left = `${homeX}px`;
         dad.style.left = `${dadX}px`;
+        kiss.style.left = `${kissX}px`;
+        heart.style.left = `${heartX}px`;
+        gloss.style.left = `${glossX}px`;
 });
 
 //================= PAUSE BUTTON ====================
@@ -156,7 +181,7 @@ pauseButton.addEventListener("click", function () {
     }
 });
 
-// ================= COLLUSION =============
+// ================= COLLISION =============
 function bumpedInto(a, b){
     const r1 = a.getBoundingClientRect();
     const r2 = b.getBoundingClientRect();

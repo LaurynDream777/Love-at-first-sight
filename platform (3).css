@@ -68,7 +68,23 @@ section{
     position: absolute;
     top: 169px;
 }
+.object--4{
+    width: 70px;
+    position: absolute;
+    top: 250px;
+}
 
+.object--5{
+    width: 175px;
+    position: absolute;
+    top: 212px;
+}
+
+.object--6{
+    width: 200px;
+    position: absolute;
+    top: 169px;
+}
 .ex-girl{
    width: 150px;
     position: absolute;
