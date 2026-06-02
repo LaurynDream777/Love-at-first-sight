@@ -1,4 +1,4 @@
-:root{
+:root {
     --clr-dark: #000;
     --clr-light-accent: #f5f5f5;
     --clr-light: #fff;
@@ -7,33 +7,37 @@
 }
 
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-section{
+body {
+    overflow: hidden;
+}
+
+section {
     position: relative;
     width: 1200px;
     height: 450px;
     overflow: hidden;
 }
 
-.player{           
+.player {
     width: 65px;
-    position: relative;   
-    top: 300px;     
+    position: relative;
+    top: 300px;
     left: 130px;
 }
-    
 
-.street{      
-     width: 100%;
+
+.street {
+    width: 100%;
     height: 50px;
     position: absolute;
     top: 363px;
-   
+
     background-image: url(concrete-board-in-cartoon-style-clip-art-free-png.webp);
     background-repeat: repeat-x;
     background-size: auto 50px;
@@ -47,122 +51,154 @@ section{
     }
 
     to {
-         background-position: -1000% 0;
+        background-position: -1000% 0;
     }
 }
 
-.object--1{
+.object--1 {
     width: 80px;
     position: absolute;
     top: 250px;
 }
 
-.object--2{
-    width: 175px;
+.object--2 {
+    width: 100px;
+    height: 100px;
     position: absolute;
-    top: 212px;
+    top: 275px;
 }
 
-.object--3{
+.object--3 {
     width: 200px;
     position: absolute;
     top: 169px;
 }
-.object--4{
-    width: 70px;
-    position: absolute;
-    top: 250px;
-}
 
-.object--5{
-    width: 175px;
-    position: absolute;
-    top: 212px;
-}
-
-.object--6{
-    width: 200px;
-    position: absolute;
-    top: 169px;
-}
-.ex-girl{
-   width: 150px;
+.ex-girl {
+    width: 150px;
     position: absolute;
     top: 221px;
     left: 1200px;
     display: none;
 }
 
-.restart{
+.restart {
     background: transparent;
     border: none
 }
 
-.restart img{
+.restart img {
     width: 130%;
     height: 130%;
 }
 
-.restart{
+.restart {
     background: transparent;
     border: none
 }
 
-.pause img{
+.pause img {
     width: 130%;
     height: 130%;
 }
-   
-
-   
 
 
 
-header{
-   font-size: 35px;
-  font-family: "Intel One Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: weight;
-  font-style: normal;
-  background-color: white;
-  padding: 4rem;
-  display: flex;
-  justify-content: space-between;
-  
 
-  
+
+
+header {
+    font-size: 35px;
+    font-family: "Intel One Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    background-color: white;
+    padding: 4rem;
+    display: flex;
+    justify-content: space-between;
+
+
+
 
 }
 
-h1{
+h1,
+h2 {
     color: transparent;
     background-color: gray;
-     -webkit-background-clip: text;
+    -webkit-background-clip: text;
     background-clip: text;
     text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
 
-    
+
 }
 
 
 
 
-main{
+main {
     background-color: white;
     padding: 6rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
 }
 
-.pause{
+.game-over-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    background-color: #d3d3d3;
+    padding: 10px;
+    display: none;
+}
+
+.game-over-screen h1 {
+    font-size: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.game-over-screen h2 {
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.restart-again {
+    height: 200px;
+    width: 400px;
+    position: absolute;
+    left: 770px;
+    top: 500px;
+    margin: 0;
+    font-family: "Intel One Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    background-color: #8b8b8b;
+    font-size: 70px;
+    color: #d3d3d3;
+
+}
+
+.pause {
     width: 50px;
     height: 50px;
 }
 
-.restart{
+.restart {
     width: 50px;
     height: 50px;
 }
@@ -171,10 +207,10 @@ main{
 
 
 
-footer{
+footer {
     background-color: white;
     padding: 4rem;
-    position: fixed;
+    position: relative;
     left: 0%;
     right: 0%;
     bottom: 0%;
